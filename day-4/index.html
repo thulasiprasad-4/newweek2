@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 - Theme Toggle</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <i class="fas fa-palette"></i>
+            Theme Switcher
+        </div>
+        <div class="theme-controls">
+            <button class="theme-btn" onclick="setTheme('light')">
+                <i class="fas fa-sun"></i> Light
+            </button>
+            <button class="theme-btn" onclick="setTheme('dark')">
+                <i class="fas fa-moon"></i> Dark
+            </button>
+            <button class="theme-btn" onclick="setTheme('blue')">
+                <i class="fas fa-water"></i> Blue
+            </button>
+            <button class="theme-btn" onclick="setTheme('green')">
+                <i class="fas fa-leaf"></i> Green
+            </button>
+            <button class="theme-btn" id="auto-toggle" onclick="toggleAutoTheme()">
+                <i class="fas fa-magic"></i> Auto
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="hero">
+            <h1 class="title">Dynamic Theme Toggle System</h1>
+            <p class="subtitle">Experience real-time theme switching with CSS and JavaScript</p>
+            <div class="theme-indicator">
+                <span id="current-theme">Light</span>
+                <div class="theme-preview" id="theme-preview"></div>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="card">
+                <h2><i class="fas fa-info-circle"></i> About This Project</h2>
+                <p>This project demonstrates DOM manipulation and CSS integration using JavaScript. You can switch between multiple themes and see all elements update dynamically.</p>
+                <p>Themes are applied using JavaScript's <code>classList</code> methods on the body element.</p>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-sliders-h"></i> Theme Controls</h2>
+                <div class="controls">
+                    <button class="control-btn" onclick="toggleTheme()">
+                        <i class="fas fa-exchange-alt"></i> Toggle Theme
+                    </button>
+                    <button class="control-btn" onclick="randomTheme()">
+                        <i class="fas fa-random"></i> Random Theme
+                    </button>
+                    <button class="control-btn" onclick="cycleTheme()">
+                        <i class="fas fa-redo"></i> Cycle Theme
+                    </button>
+                </div>
+                
+                <div class="slider-container">
+                    <label for="brightness">
+                        <i class="fas fa-adjust"></i> Brightness
+                    </label>
+                    <input type="range" id="brightness" min="50" max="150" value="100" 
+                           oninput="changeBrightness(this.value)">
+                    <span id="brightness-value">100%</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-code"></i> Elements Demo</h2>
+                <div class="demo-elements">
+                    <button class="demo-btn">Button Element</button>
+                    <input type="text" class="demo-input" placeholder="Input Field">
+                    <select class="demo-select">
+                        <option>Select Option</option>
+                        <option>Option 1</option>
+                        <option>Option 2</option>
+                    </select>
+                    <div class="demo-alert success">
+                        <i class="fas fa-check-circle"></i> Success Message
+                    </div>
+                    <div class="demo-alert warning">
+                        <i class="fas fa-exclamation-triangle"></i> Warning Message
+                    </div>
+                    <div class="demo-alert error">
+                        <i class="fas fa-times-circle"></i> Error Message
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2><i class="fas fa-history"></i> Theme History</h2>
+                <div id="theme-history"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Day 4: DOM + CSS Integration | Theme Toggle System</p>
+            <p class="footer-info">Current Theme: <span id="theme-name">light</span> | 
+                Last Changed: <span id="last-change">Just now</span></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

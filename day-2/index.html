@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 - Arrays & Objects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Day 2 - Arrays & Objects</h1>
+        
+        <div class="section">
+            <h2>Student Marks Management System</h2>
+            
+            <div class="controls">
+                <button onclick="displayStudents()">Display All Students</button>
+                <button onclick="findTopper()">Find Topper</button>
+                <button onclick="calculateAverage()">Calculate Average</button>
+                <button onclick="addRandomStudent()">Add Random Student</button>
+            </div>
+
+            <div class="student-form">
+                <h3>Add New Student</h3>
+                <div class="form-group">
+                    <input type="text" id="studentName" placeholder="Enter student name">
+                    <input type="number" id="studentMarks" placeholder="Enter marks (0-100)">
+                    <button onclick="addStudent()">Add Student</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="console-output">
+                    <h3>Console Output</h3>
+                    <div id="console"></div>
+                </div>
+
+                <div class="ui-display">
+                    <h3>Student List Display</h3>
+                    <div id="studentList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

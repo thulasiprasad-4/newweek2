@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #f5576c;
+}
+
+.section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+
+.controls button {
+    padding: 12px 25px;
+    background: #f5576c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+}
+
+.controls button:hover {
+    background: #e94e61;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(245, 87, 108, 0.4);
+}
+
+.student-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 2px solid #e9ecef;
+}
+
+.student-form h3 {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+.form-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-group input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    font-size: 16px;
+    min-width: 200px;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #f5576c;
+}
+
+.form-group button {
+    padding: 12px 30px;
+    background: #38c172;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.form-group button:hover {
+    background: #32b368;
+    transform: translateY(-2px);
+}
+
+.output-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.console-output, .ui-display {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+.console-output h3, .ui-display h3 {
+    margin-bottom: 15px;
+    color: #495057;
+}
+
+#console {
+    background: #1a202c;
+    color: #cbd5e0;
+    padding: 15px;
+    border-radius: 6px;
+    min-height: 200px;
+    font-family: 'Courier New', monospace;
+    white-space: pre-wrap;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+#studentList {
+    display: grid;
+    gap: 10px;
+}
+
+.student-card {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 4px solid #f5576c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.student-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.student-marks {
+    font-size: 18px;
+    font-weight: bold;
+    color: #38c172;
+}
+
+.topper {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+}
+
+.average {
+    color: #6c757d;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #dee2e6;
+}

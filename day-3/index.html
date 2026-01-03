@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 - Counter App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Day 3 - DOM Manipulation Counter App</h1>
+        
+        <div class="counter-container">
+            <div class="counter-display">
+                <span id="counter-value">0</span>
+            </div>
+            
+            <div class="counter-controls">
+                <button id="decrement-btn" onclick="decrement()">-</button>
+                <button id="reset-btn" onclick="resetCounter()">Reset</button>
+                <button id="increment-btn" onclick="increment()">+</button>
+            </div>
+            
+            <div class="step-controls">
+                <h3>Step Control</h3>
+                <div class="step-buttons">
+                    <button onclick="setStep(1)">Step 1</button>
+                    <button onclick="setStep(5)">Step 5</button>
+                    <button onclick="setStep(10)">Step 10</button>
+                </div>
+                <p>Current Step: <span id="current-step">1</span></p>
+            </div>
+            
+            <div class="counter-history">
+                <h3>Counter History</h3>
+                <div id="history-list"></div>
+            </div>
+            
+            <div class="stats">
+                <h3>Statistics</h3>
+                <p>Maximum Value: <span id="max-value">0</span></p>
+                <p>Minimum Value: <span id="min-value">0</span></p>
+                <p>Total Operations: <span id="total-ops">0</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

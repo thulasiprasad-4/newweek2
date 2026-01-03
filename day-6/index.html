@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 - Bootstrap Enhanced Counter</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-calculator me-2"></i>
+                Bootstrap Counter Pro
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#"><i class="bi bi-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-info-circle"></i> About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="bi bi-gear"></i> Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <!-- Header -->
+                <div class="text-center mb-5">
+                    <h1 class="display-4 fw-bold text-primary">
+                        <i class="bi bi-arrow-up-down"></i> Enhanced Counter App
+                    </h1>
+                    <p class="lead text-muted">
+                        A responsive counter application built with Bootstrap 5 and JavaScript
+                    </p>
+                </div>
+
+                <!-- Counter Card -->
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-gradient-primary text-white py-4">
+                        <h2 class="card-title mb-0 text-center">
+                            <i class="bi bi-speedometer2"></i> Interactive Counter
+                        </h2>
+                    </div>
+                    <div class="card-body p-5">
+                        <div class="row align-items-center">
+                            <!-- Counter Display -->
+                            <div class="col-lg-6 mb-4 mb-lg-0">
+                                <div class="counter-display text-center">
+                                    <div class="counter-value-container mb-4">
+                                        <span id="counterValue" class="display-1 fw-bold">0</span>
+                                    </div>
+                                    <div class="counter-status mb-3">
+                                        <span id="counterStatus" class="badge bg-success fs-6">Neutral</span>
+                                    </div>
+                                    <div class="progress mb-4" style="height: 10px;">
+                                        <div id="progressBar" class="progress-bar" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Counter Controls -->
+                            <div class="col-lg-6">
+                                <div class="row g-3">
+                                    <!-- Step Controls -->
+                                    <div class="col-12">
+                                        <h5 class="text-secondary mb-3">
+                                            <i class="bi bi-sliders"></i> Step Control
+                                        </h5>
+                                        <div class="d-flex flex-wrap gap-2 mb-4">
+                                            <button class="btn btn-outline-primary step-btn" data-step="1">
+                                                Step 1
+                                            </button>
+                                            <button class="btn btn-outline-primary step-btn" data-step="5">
+                                                Step 5
+                                            </button>
+                                            <button class="btn btn-outline-primary step-btn" data-step="10">
+                                                Step 10
+                                            </button>
+                                            <button class="btn btn-outline-primary step-btn" data-step="50">
+                                                Step 50
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Action Buttons -->
+                                    <div class="col-12">
+                                        <h5 class="text-secondary mb-3">
+                                            <i class="bi bi-controller"></i> Actions
+                                        </h5>
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                            <button id="decrementBtn" class="btn btn-danger btn-lg px-4">
+                                                <i class="bi bi-dash-circle"></i> Decrement
+                                            </button>
+                                            <button id="resetBtn" class="btn btn-warning btn-lg px-4">
+                                                <i class="bi bi-arrow-clockwise"></i> Reset
+                                            </button>
+                                            <button id="incrementBtn" class="btn btn-success btn-lg px-4">
+                                                <i class="bi bi-plus-circle"></i> Increment
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Quick Actions -->
+                                    <div class="col-12 mt-4">
+                                        <h5 class="text-secondary mb-3">
+                                            <i class="bi bi-lightning"></i> Quick Actions
+                                        </h5>
+                                        <div class="d-flex flex-wrap gap-2">
+                                            <button class="btn btn-info" onclick="setCounter(100)">
+                                                Set to 100
+                                            </button>
+                                            <button class="btn btn-info" onclick="setCounter(-100)">
+                                                Set to -100
+                                            </button>
+                                            <button class="btn btn-info" onclick="doubleCounter()">
+                                                Double Value
+                                            </button>
+                                            <button class="btn btn-info" onclick="halveCounter()">
+                                                Halve Value
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="row mt-4">
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card text-center h-100 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-arrow-up-circle fs-1 text-success"></i>
+                                <h5 class="card-title mt-2">Maximum</h5>
+                                <p id="maxValue" class="display-6 fw-bold">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card text-center h-100 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-arrow-down-circle fs-1 text-danger"></i>
+                                <h5 class="card-title mt-2">Minimum</h5>
+                                <p id="minValue" class="display-6 fw-bold">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card text-center h-100 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-clock-history fs-1 text-primary"></i>
+                                <h5 class="card-title mt-2">Operations</h5>
+                                <p id="totalOps" class="display-6 fw-bold">0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-4">
+                        <div class="card text-center h-100 shadow-sm">
+                            <div class="card-body">
+                                <i class="bi bi-speedometer fs-1 text-warning"></i>
+                                <h5 class="card-title mt-2">Current Step</h5>
+                                <p id="currentStep" class="display-6 fw-bold">1</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- History Section -->
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">
+                            <i class="bi bi-list-ul"></i> Operation History
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Time</th>
+                                        <th>Operation</th>
+                                        <th>Value</th>
+                                        <th>Step</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historyTable">
+                                    <!-- History will be populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <button class="btn btn-outline-secondary btn-sm" onclick="clearHistory()">
+                            <i class="bi bi-trash"></i> Clear History
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Settings Section -->
+                <div class="card shadow-sm mt-4">
+                    <div class="card-header bg-light">
+                        <h5 class="mb-0">
+                            <i class="bi bi-gear"></i> Settings
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="rangeInput" class="form-label">
+                                        Counter Range: <span id="rangeValue">-100 to 100</span>
+                                    </label>
+                                    <input type="range" class="form-range" id="rangeInput" 
+                                           min="10" max="500" value="100" oninput="updateRange()">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Theme Color</label>
+                                    <div class="d-flex gap-2">
+                                        <button class="btn btn-primary theme-color" data-color="primary">Blue</button>
+                                        <button class="btn btn-success theme-color" data-color="success">Green</button>
+                                        <button class="btn btn-danger theme-color" data-color="danger">Red</button>
+                                        <button class="btn btn-dark theme-color" data-color="dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5><i class="bi bi-code-slash"></i> Bootstrap Counter</h5>
+                    <p class="mb-0">A responsive counter application demonstrating Bootstrap 5 components.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-0">Day 6: Bootstrap UI Enhancement Project</p>
+                    <small>Using HTML, CSS, JavaScript & Bootstrap</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>
